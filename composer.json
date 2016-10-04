@@ -1,8 +1,9 @@
 {
   "name": "kyoya-de/random-string-generator",
   "description": "This library is used to generate various random strings in different length.",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "license": "MIT",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Stefan Krent",
