@@ -1,18 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace KyoyaDe\Generator\RandomString\CharPool;
 
 class SpecialCharactersPool implements CharacterPoolInterface
 {
-    private $pool = [];
+    /**
+     * @var array<string>|null
+     */
+    private static ?array $pool = null;
 
-    public function __construct()
+    /**
+     * Returns an array of special characters.
+     *
+     * @return array<string>
+     */
+    public function getCharacters(): array
     {
-        $this->pool = array_merge($this->pool, range('!', '.'), range(':', '@'), range('[', '_'), range('{', '}'));
-    }
+        if (null === static::$pool) {
+            static::$pool = array_merge(
+                range('!', '.'),
+                range(':', '@'),
+                range('[', '_'),
+                range('{', '}')
+            );
+        }
 
-    public function getCharacters()
-    {
-        return $this->pool;
+        return static::$pool;
     }
 }

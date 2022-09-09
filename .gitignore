@@ -1,0 +1,4 @@
+/coverage
+/build
+/composer.lock
+/.php-cs-fixer.cache

@@ -1,17 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace KyoyaDe\Generator\RandomString\CharPool;
 
 class AlphaUpperPool implements CharacterPoolInterface
 {
-    private $pool;
+    /**
+     * @var array<string>|null
+     */
+    private static ?array $pool = null;
 
-    public function getCharacters()
+    /**
+     * Returns an array of lowercase letters.
+     *
+     * @return array<string>
+     */
+    public function getCharacters(): array
     {
-        if (null === $this->pool) {
-            $this->pool = range('A', 'Z');
+        if (null === static::$pool) {
+            static::$pool = range('A', 'Z');
         }
 
-        return $this->pool;
+        return static::$pool;
     }
 }

@@ -4,15 +4,48 @@
   "minimum-stability": "stable",
   "license": "MIT",
   "version": "1.0.0",
+  "require": {
+    "php": "^8.0"
+  },
   "authors": [
     {
-      "name": "Stefan Krent",
+      "name": "Stefan Krenz",
       "email": "info@kyoya.de"
     }
   ],
   "autoload": {
     "psr-4": {
       "KyoyaDe\\Generator\\RandomString\\": "lib/"
+    }
+  },
+  "autoload-dev": {
+    "spec\\": "spec/"
+  },
+  "scripts": {
+    "phpspec": "phpspec run",
+    "phpmd": "phpmd lib/ ansi phpmd.xml",
+    "phpcs": "phpcs --standard=PSR12 lib/",
+    "php-cs-fixer": "php-cs-fixer fix lib/ --rules=@PSR12",
+    "psalm": "psalm",
+    "test": [
+      "@phpcs",
+      "@php-cs-fixer",
+      "@phpmd",
+      "@psalm",
+      "@phpspec"
+    ]
+  },
+  "require-dev": {
+    "phpspec/phpspec": "^7.2",
+    "friends-of-phpspec/phpspec-code-coverage": "^6.1",
+    "squizlabs/php_codesniffer": "^3.7",
+    "friendsofphp/php-cs-fixer": "^3.11",
+    "vimeo/psalm": "^4.27",
+    "phpmd/phpmd": "^2.12"
+  },
+  "config": {
+    "platform": {
+      "php": "8.0.22"
     }
   }
 }
