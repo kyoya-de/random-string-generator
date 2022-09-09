@@ -3,7 +3,6 @@
   "description": "This library is used to generate various random strings in different length.",
   "minimum-stability": "stable",
   "license": "MIT",
-  "version": "1.0.0",
   "require": {
     "php": "^8.0"
   },
