@@ -1,0 +1,7 @@
+suites:
+  default:
+    namespace: KyoyaDe\Generator\RandomString
+    psr4_prefix: KyoyaDe\Generator\RandomString
+
+extensions:
+  FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
